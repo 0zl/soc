@@ -2,7 +2,7 @@
 soc - simple pub/sub-ish websocket client for nodejs.
 -----------------------------------------------------
 
-client event reciever: message
+client event receiver: message
 
 global data packet types:
 - 0: logger
