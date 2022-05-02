@@ -1,0 +1,25 @@
+{
+  "name": "soc",
+  "version": "1.0.0",
+  "description": "simple pub/sub-ish websocket client",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/0zl/soc.git"
+  },
+  "keywords": [
+    "websocket",
+    "pub/sub",
+    "client"
+  ],
+  "author": "0zl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0zl/soc/issues"
+  },
+  "homepage": "https://github.com/0zl/soc#readme",
+  "dependencies": {
+    "ws": "^8.6.0"
+  }
+}
