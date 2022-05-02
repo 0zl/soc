@@ -76,14 +76,14 @@ module.exports = class SOC extends EventEmitter {
         let connected = false
         let count = 0
 
-        return new promises(async resolve => {
+        return new Promise(async resolve => {
             this._isReconnecting = false
 
             while ( !connected ) {
                 try {
                     await new Promise(resolve => setTimeout(resolve, 1000))
                     connected = await this.connect()
-                    
+
                     if ( connected ) {
                         console.clear()
                         console.log('reconnected.')
