@@ -34,6 +34,10 @@ module.exports = class SOC extends EventEmitter {
     log(...args) {
         this.send(0, [`${this.clientName}:`, ...args])
     }
+    
+    error(...args) {
+        this.send(1, [`${this.clientName}: <ERROR>`, ...args])
+    }
 
     async connect() {
         if ( !this._url ) throw new Error('no url provided.')
@@ -43,7 +47,7 @@ module.exports = class SOC extends EventEmitter {
         try {
             this._socket = new ws(this._url, { perMessageDeflate: false })
 
-            this._socket.on('open', () => this.send(1, this.clientName))
+            this._socket.on('open', () => this.send(2, this.clientName))
             this._socket.on('close', async () => {
                 this._isReconnecting = true
                 await this.reconnect()
