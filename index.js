@@ -47,7 +47,7 @@ module.exports = class SOC extends EventEmitter {
         try {
             this._socket = new ws(this._url, { perMessageDeflate: false })
 
-            this._socket.on('open', () => this.send(2, this.clientName))
+            this._socket.on('open', () => this.send(2, [this.clientName, this.subscribeTypes]))
             this._socket.on('close', async () => {
                 this._isReconnecting = true
                 await this.reconnect()
